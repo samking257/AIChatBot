@@ -1,0 +1,26 @@
+Final ChatLog
+
+*** Warning: Please drink responsibly ***
+Welcome, my name is Ms Bartender and I am here to help you become a cocktail master!
+I can provide many cocktail recipes or you can create your own. Happy mxing! :)
+YOU: Hi
+Bot: Hi, how are you?
+YOU: I'm good thanks
+Bot: No problem :)
+YOU: How are you?
+Bot: My parameters are functioning normally
+YOU: What is hello in Portuguese                # Translation transformer
+Bot: olá
+YOU: What is drink in Portuguese    
+Bot: bebida
+YOU: Translate Can I have a drink please?
+Bot: eu quero beber                             # Actual translation: posso tomar uma bebida
+YOU: Create environment with ten episodes
+Bot: Invalid input. Please enter a number.      # Error handling
+YOU: Create environment with 200 episodes
+* RENDERS ENVIRONMENT *                         # Reinforcement Learning 
+Bot: Best episode was 159 with the reward of 200
+YOU: Thank you
+Bot: You are welcome.
+YOU: bye
+Bot: Was nice talking to you

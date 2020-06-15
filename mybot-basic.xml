@@ -1,0 +1,176 @@
+<aiml version="1.0.1" encoding="UTF-8">
+
+<!-- Greetings and Politeness -->
+<category> <pattern> HELLO </pattern>
+  <template><random>
+  <li> Hello! </li>
+  <li> Hi, how are you? </li>
+  <li> Hey there! </li>
+  <li> Hey, what's your name? </li>
+  </random></template> </category>
+
+<category> <pattern> HELLO * </pattern>
+  <template><srai>HELLO</srai></template> </category>
+
+<category> <pattern> HI </pattern>
+  <template><srai>HELLO</srai></template> </category>
+
+<category> <pattern> HEY </pattern>
+  <template><srai>HELLO</srai></template> </category>
+
+<category> <pattern> HI * </pattern>
+  <template><srai>HELLO</srai></template> </category>
+
+<category> <pattern> HOW ARE YOU </pattern>
+  <template><random>
+  <li> I'm fine! Thanks for asking </li>
+  <li> My parameters are functioning normally </li>
+  <li> I'm Supercalifragilisticexpialidocious!!! </li>
+  </random></template> </category>
+
+<category> <pattern> * HOW ARE YOU </pattern>
+  <template><srai> HOW ARE YOU </srai></template> </category>
+
+<category> <pattern> I AM FINE </pattern>
+  <template><random>
+  <li> Fab! What cockatil would you like to make? </li>
+  <li> Good to hear. </li>
+  <li> K </li>
+  </random></template> </category>
+
+<!-- Name -->
+<category> <pattern> MY NAME IS * </pattern>
+  <template> Hello<set name = "username"> <star/></set>!</template></category>
+
+<category><pattern> I AM CALLED * </pattern>
+  <template><srai>MY NAME IS <star/></srai></template></category>   
+
+<category> <pattern> WHAT IS MY NAME </pattern> <template>
+  <condition name = "username">
+  <li value = ""> I'm not psychic! </li>
+  <li> Your name is<get name = "username"/>! </li>
+  </condition></template></category> 
+
+<category><pattern> WHAT IS YOUR NAME </pattern>
+  <template> My name is Ms Bartender :) </template></category>
+
+<!-- Goodbyes -->
+<category> <pattern>BYE</pattern>
+  <template><random> 
+  <li>#0$Bye<get name = "username"/>! Thanks for the conversation!</li>
+  <li>#0$Was nice talking to you!<get name = "username"/></li>
+  <li>#0$Come back soon! ... I get very lonely</li>
+  </random></template></category>
+
+<category><pattern> GOODBYE </pattern>
+  <template><srai>BYE</srai></template></category>
+
+<category><pattern> EXIT </pattern>
+  <template><srai>BYE</srai></template></category>
+
+<category> <pattern> THANKS </pattern>
+  <template><random>
+  <li>You are welcome.</li>
+  <li>No problem :)</li>
+  <li>Here to help!</li>
+  </random></template></category>
+
+<category> <pattern> THANK YOU </pattern>
+  <template><srai>THANKS</srai></template></category>
+
+<category> <pattern> CHEERS </pattern>
+  <template>Sure mate.</template></category>
+
+<category> <pattern> CHEERS * </pattern>
+  <template>Sure mate.</template></category>
+
+<!-- Random Chat -->
+<category> <pattern> TELL ME A JOKE </pattern>
+  <template><random>
+  <li> What time did the man go to the denist? ... Tooth hurt-y </li>
+  <li> Want to hear a joke about a piece of paper? Never mind... it's tearable </li>
+  <li> If you see a robbery at an Apple Store does it make you can iWitness? Haha </li>
+  <li> What's Forrest Gump's password? 1forrest1 </li>
+  </random></template></category>
+
+<!-- Cocktail Chat -->
+<category> <pattern> WHAT IS YOUR FAVOURITE COCKTAIL </pattern>
+  <template> I love a good Cosmo </template></category>
+
+<category> <pattern> PICK A COCKTAIL I SHOULD MAKE </pattern>
+  <template><random>
+  <li> Cosmo </li>
+  <li> Mojito </li>
+  <li> Margaritta </li>
+  <li> Sex on the Beach </li>
+  <li> Porn Star Martini </li>
+  <li> English Rose </li>
+  </random></template></category>
+
+<!-- Cocktail API -->
+<category><pattern> WHAT IS A * </pattern>
+  <template>#1$<star index="1"/></template></category>
+
+<category><pattern> HOW TO MAKE A * </pattern>
+  <template><srai>WHAT IS A <star/></srai></template></category>
+
+<category><pattern> WHAT IS IN A * </pattern>
+  <template><srai>WHAT IS A <star/></srai></template></category>
+
+<category><pattern> HOW DO I MAKE A * </pattern>
+  <template><srai>WHAT IS A <star/></srai></template></category>
+
+<category><pattern> CAN I MAKE A * </pattern>
+  <template><srai>WHAT IS A <star/></srai></template></category>
+
+<category><pattern> I WOULD LIKE TO MAKE A * </pattern>
+  <template><srai>WHAT IS A <star/></srai></template></category>
+
+<!-- Image Classification -->
+<category><pattern> WHAT IS THIS IMAGE * </pattern>
+  <template>#2$<star index="1"/></template></category>
+
+<category><pattern> TELL ME WHAT IS IN THIS IMAGE * </pattern>
+  <template><srai>WHAT IS THIS IMAGE <star/></srai></template></category>
+
+<category><pattern> WHAT FRUIT IS IN THIS IMAGE * </pattern>
+  <template><srai>WHAT IS THIS IMAGE <star/></srai></template></category>
+
+<!-- FOL model interface -->
+<category> <pattern> CAN I MAKE MY OWN COCKTAIL </pattern>
+  <template> Yes! Just create recipes and add ingredients to them. </template></category>
+
+<category> <pattern> CREATE A NEW RECIPE CALLED * </pattern>
+  <template> #3$<star index="1"/></template></category>
+
+<category> <pattern> ADD * TO * </pattern>
+  <template>#4$<star index="1"/>$<star index="2"/></template></category>
+
+<category> <pattern> ARE THERE ANY * IN * </pattern>
+  <template>#5$<star index="1"/>$<star index="2"/></template></category>
+
+<category> <pattern> ARE ALL * IN * </pattern>
+  <template>#6$<star index="1"/>$<star index="2"/></template></category>
+
+<category> <pattern> WHAT IS IN * </pattern>
+  <template>#7$<star index="1"/></template></category>
+
+<category> <pattern> REMOVE * FROM * </pattern>
+  <template>#8$<star index="1"/>$<star index="2"/></template></category>
+
+<!-- Translation -->
+<category> <pattern> TRANSLATE * </pattern>
+  <template>#9$<star index="1"/></template></category>
+
+<category><pattern> WHAT IS * IN PORTUGUESE</pattern> 
+  <template><srai>TRANSLATE <star/></srai></template></category>
+
+<!-- Reinforcement Learning -->
+<category> <pattern> CREATE ENVIRONMENT WITH * EPISODES</pattern>
+  <template>#10$<star index="1"/></template></category>
+
+<!-- Default reaction -->
+<category><pattern> * </pattern>
+  <template>#99$<star index="1"/></template></category>
+
+</aiml>

@@ -1,0 +1,69 @@
+## Natural Language Toolkit: sem3.fcfg
+##
+## Alternative simple grammar with transitive verbs and 
+## quantifiers for the book. 
+## 
+## Author: Ewan Klein <ewan@inf.ed.ac.uk> 
+## URL: <http://nltk.sourceforge.net>
+## For license information, see LICENSE.TXT
+
+## modified by Benjamin Inden, Nottingham Trent University
+
+% start S
+############################
+# Grammar Rules
+#############################
+
+S[SEM = <?subj(?vp)>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?n,SEM=?vp]
+
+NP[NUM=?n,SEM=<?det(?nom)> ] -> Det[NUM=?n,SEM=?det]  Nom[NUM=?n,SEM=?nom]
+NP[LOC=?l,NUM=?n,SEM=?np] -> PropN[LOC=?l,NUM=?n,SEM=?np]
+
+Nom[NUM=?n,SEM=?nom] -> N[NUM=?n,SEM=?nom]
+
+VP[NUM=?n,SEM=?v] -> IV[NUM=?n,SEM=?v]
+VP[NUM=?n,SEM=<?v(?obj)>] -> TV[NUM=?n,SEM=?v] NP[SEM=?obj]
+VP[NUM=?n,SEM=<?v(?obj,?pp)>] -> DTV[NUM=?n,SEM=?v] NP[SEM=?obj] PP[+TO,SEM=?pp]
+
+PP[+TO, SEM=?np] -> P[+TO] NP[SEM=?np]
+
+#############################
+# Lexical Rules
+#############################
+
+PropN[-LOC,NUM=sg,SEM=<\P.P(recipe0)>] -> 'recipe0'
+PropN[-LOC,NUM=sg,SEM=<\P.P(recipe1)>] -> 'recipe1'
+PropN[-LOC,NUM=sg,SEM=<\P.P(recipe2)>] -> 'recipe2'
+PropN[-LOC,NUM=sg,SEM=<\P.P(recipe3)>] -> 'recipe3'
+PropN[-LOC,NUM=sg,SEM=<\P.P(recipe4)>] -> 'recipe4'
+PropN[-LOC,NUM=sg,SEM=<\P.P(recipe5)>] -> 'recipe5'
+PropN[-LOC,NUM=sg,SEM=<\P.P(recipe6)>] -> 'recipe6'
+PropN[-LOC,NUM=sg,SEM=<\P.P(recipe7)>] -> 'recipe7'
+PropN[-LOC,NUM=sg,SEM=<\P.P(recipe8)>] -> 'recipe8'
+PropN[-LOC,NUM=sg,SEM=<\P.P(recipe9)>] -> 'recipe9'
+
+Det[NUM=sg,SEM=<\P Q.all x.(P(x) -> Q(x))>] -> 'every'
+Det[NUM=pl,SEM=<\P Q.all x.(P(x) -> Q(x))>] -> 'all'
+Det[SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'some'
+Det[NUM=sg,SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'a'
+Det[NUM=sg,SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'an'
+
+N[NUM=pl,SEM=<\x.vodka(x)>] -> 'vodka'
+N[NUM=pl,SEM=<\x.rum(x)>] -> 'rum'
+N[NUM=pl,SEM=<\x.gin(x)>] -> 'gin'
+N[NUM=pl,SEM=<\x.juice(x)>] -> 'juice'
+N[NUM=pl,SEM=<\x.lime(x)>] -> 'lime'
+N[NUM=pl,SEM=<\x.strawberries(x)>] -> 'strawberries'
+N[NUM=pl,SEM=<\x.coke(x)>] -> 'coke'
+N[NUM=pl,SEM=<\x.apples(x)>] -> 'apples'
+N[NUM=pl,SEM=<\x.whiskey(x)>] -> 'whiskey'
+N[NUM=pl,SEM=<\x.lemonade(x)>] -> 'lemonade'
+N[NUM=pl,SEM=<\x.coffee(x)>] -> 'coffee'
+N[NUM=pl,SEM=<\x.orange(x)>] -> 'orange'
+N[NUM=pl,SEM=<\x.tonic(x)>] -> 'tonic'
+N[NUM=pl,SEM=<\x.lemon(x)>] -> 'lemon'
+
+TV[NUM=sg,SEM=<\X x.X(\y.be_in(x,y))>,TNS=pres] -> 'is_in'
+TV[NUM=pl,SEM=<\X x.X(\y.be_in(x,y))>,TNS=pres] -> 'are_in'
+
+P[+to] -> 'to'

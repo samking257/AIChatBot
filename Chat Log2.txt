@@ -1,0 +1,28 @@
+Chat log
+
+Welcome, my name is Ms Bartender and I am here to help you become a cocktail master! 
+Just tell me what you'd like to make and I'll give you the recipe. Happy mxing! :)
+YOU: Hi
+Bot: Hi, how are you?
+YOU: I'm good thanks
+Bot: No problem :)
+YOU: How are you?
+Bot: My parameters are functioning normally
+YOU: What is this image Apple.jpg
+Bot: Lemme look ... Apple!!
+* SHOWS IMAGE *
+YOU: What fruit is in this image Strawberry.jpg     
+Bot: I could not find the image.                    ** error handling
+YOU: What fruit is in this image Strawberry.png
+Bot: Lemme look ... Strawberry!!
+* SHOWS IMAGE *
+YOU: What fruit is in this image Lemon2.jpg
+Bot: Lemme look ... Lemon!!
+* SHOWS IMAGE *
+YOU: Tell me what is in this image Tomato.jpg
+Bot: Lemme look ... Tomato!!
+* SHOWS IMAGE *
+YOU: Thank you
+Bot: You are welcome.
+YOU: bye
+Bot: Was nice talking to you

@@ -1,0 +1,36 @@
+Chat Log
+
+Welcome, my name is Ms Bartender and I am here to help you become a cocktail master! 
+I can provide many cocktail recipes or you can create your own. Happy mxing! :)
+You: Hi
+Bot: Hello!
+You: Can i make my own cocktail
+Bot: Yes! Just create recipes and add ingredients to them.
+You: Create a new recipe called myCocktail                  ## Create a new recipe by naming it
+Bot: New recipe created, you can now add ingredients to it.
+You: Add vodka to myCocktail
+Bot: Added!                     ## add to recipe
+You: Add lime to mycoktail          
+Bot: The recipe does not exist      ## error handling
+You: add lime to myCocktail
+Bot: Added!
+You: Add vodka to myCocktail
+Bot: Ingredient already in recipe   ## stops adding multiples 
+You: Add lemonde to myCocktail
+Bot: Sorry but the ingredient does not exist    ## error handling
+You: Add lemonade to myCocktail
+Bot: Added!
+You: remove lime from myCocktail
+Bot: Removed!                       ## remove from recipe
+You: what is in myCocktail
+Bot: myCocktail's Ingredients are:  ##list ingredients
+vodka
+lemonade
+You: are there any lime in myCocktail
+Bot: No
+You: are all vodka in myCocktail
+Bot: Yes
+You: Thank you
+Bot: Here to help!
+You: bye
+Bot: Come back soon! ... I get very lonely
